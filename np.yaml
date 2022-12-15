@@ -2,7 +2,7 @@ kind: NetworkPolicy
 apiVersion: networking.k8s.io/v1
 metadata:
   name: nopls
-  namespace: default
+  namespace: argocd
 spec:
   podSelector: {}
   ingress:
