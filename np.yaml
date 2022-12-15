@@ -1,0 +1,30 @@
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: nopls
+  namespace: default
+  uid: 258d7fbe-7ebc-4b9c-9c4e-90b19f1d11c9
+  resourceVersion: '379947'
+  generation: 2
+  creationTimestamp: '2022-12-15T08:47:17Z'
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: networking.k8s.io/v1
+      time: '2022-12-15T09:31:23Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:ingress': {}
+          'f:policyTypes': {}
+spec:
+  podSelector: {}
+  ingress:
+    - from:
+        - podSelector:
+            matchExpressions:
+              - key: helm.sh/chart
+                operator: DoesNotExist
+  policyTypes:
+    - Ingress
+status: {}
